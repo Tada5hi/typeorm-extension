@@ -87,7 +87,9 @@ export async function createPostgresDatabase(
      * @link https://github.com/typeorm/typeorm/blob/master/src/driver/postgres/PostgresQueryRunner.ts#L326
      */
     let query = `CREATE DATABASE "${options.database}"`;
-    if (typeof options.characterSet === 'string') {
+    if (typeof options.template === 'string') {
+        query += ` TEMPLATE "${options.template}"`;
+    } else if (typeof options.characterSet === 'string') {
         query += ` WITH ENCODING '${options.characterSet}'`;
     }
 
