@@ -41,5 +41,6 @@ export function buildDriverOptions(options: DataSourceOptions): DriverOptions {
         ...(driverOptions.serviceName ? { serviceName: driverOptions.serviceName } : {}),
         ...(options.extra ? { extra: options.extra } : {}),
         ...(driverOptions.domain ? { domain: driverOptions.domain } : {}),
+        ...(driverOptions.schema ? { schema: driverOptions.schema } : {}),
     };
 }

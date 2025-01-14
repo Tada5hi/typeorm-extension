@@ -18,6 +18,9 @@ export type DriverOptions = {
     charset?: string,
     characterSet?: string,
 
+    // postgres specific
+    schema?: string
+
     extra?: {
         [key: string]: any
     }
